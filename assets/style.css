@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+.control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.control-group {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 14px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    margin-bottom: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #dee2e6;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.control-group span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.plots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.plot-container {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-panel {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.fringe-info {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.theory-info {
+    font-size: 15px;
+    text-align: left;
+    line-height: 1.7;
+    color: #495057;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.theory-section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.theory-section h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 1px solid #ced4da;
+    padding-bottom: 10px;
+}
+
+.theory-section p {
+    margin: 10px 0;
+    color: #495057;
+}
+
+.theory-section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.theory-section li {
+    margin: 8px 0;
+    color: #495057;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .control-panel {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .control-group {
+        min-width: 100%;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* 加载动画 */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
