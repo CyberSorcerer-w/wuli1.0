@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双缝干涉实验 - 交互式演示</title>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>双缝干涉实验 - 交互式演示</h1>
+
+        <div class="control-panel">
+            <div class="control-group">
+                <label for="slit-separation-slider">双缝间距 d (mm):</label>
+                <input type="range" id="slit-separation-slider" min="0.1" max="2.0" value="0.5" step="0.05">
+                <div class="slider-ticks">
+                    <span>0.1</span>
+                    <span>1.0</span>
+                    <span>2.0</span>
+                </div>
+                <span id="slit-separation-value">0.5 mm</span>
+            </div>
+
+            <div class="control-group">
+                <label for="screen-distance-slider">缝屏距离 L (m):</label>
+                <input type="range" id="screen-distance-slider" min="0.5" max="3.0" value="1.5" step="0.1">
+                <div class="slider-ticks">
+                    <span>0.5</span>
+                    <span>1.5</span>
+                    <span>3.0</span>
+                </div>
+                <span id="screen-distance-value">1.5 m</span>
+            </div>
+
+            <div class="control-group">
+                <label for="wavelength-slider">光波长 λ (nm):</label>
+                <input type="range" id="wavelength-slider" min="400" max="700" value="532" step="10">
+                <div class="slider-ticks">
+                    <span>400</span>
+                    <span>550</span>
+                    <span>700</span>
+                </div>
+                <span id="wavelength-value">532 nm</span>
+            </div>
+
+            <div class="control-group">
+                <label for="coherence-slider">光源单色性:</label>
+                <input type="range" id="coherence-slider" min="0.1" max="1.0" value="0.9" step="0.1">
+                <div class="slider-ticks">
+                    <span>差</span>
+                    <span>中</span>
+                    <span>好</span>
+                </div>
+                <span id="coherence-value">好</span>
+            </div>
+
+            <div class="control-group">
+                <label for="vibration-slider">环境振动:</label>
+                <input type="range" id="vibration-slider" min="0" max="1.0" value="0.1" step="0.1">
+                <div class="slider-ticks">
+                    <span>无</span>
+                    <span>中等</span>
+                    <span>严重</span>
+                </div>
+                <span id="vibration-value">轻微</span>
+            </div>
+
+            <div class="control-group">
+                <label for="slit-width-slider">缝宽 (μm):</label>
+                <input type="range" id="slit-width-slider" min="10" max="200" value="50" step="10">
+                <div class="slider-ticks">
+                    <span>10</span>
+                    <span>100</span>
+                    <span>200</span>
+                </div>
+                <span id="slit-width-value">50 μm</span>
+            </div>
+        </div>
+
+        <div class="plots-container">
+            <div id="interference-pattern" class="plot-container"></div>
+            <div id="intensity-profile" class="plot-container"></div>
+        </div>
+
+        <div class="info-panel">
+            <div id="fringe-spacing-display" class="fringe-info">条纹间距: 计算中...</div>
+            <div id="theory-explanation" class="theory-info"></div>
+        </div>
+
+        <div class="theory-section">
+            <h3>理论公式推导</h3>
+            <p>双缝干涉条纹间距公式: Δx = λL/d</p>
+            <p>其中:</p>
+            <ul>
+                <li>Δx: 相邻明纹或暗纹间距</li>
+                <li>λ: 光波长</li>
+                <li>L: 缝屏距离</li>
+                <li>d: 双缝间距</li>
+            </ul>
+            <p>单缝衍射调制公式: I = I₀ (sinβ/β)² cos²α</p>
+            <p>其中 β = (πa/λL)x, α = (πd/λL)x</p>
+        </div>
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
